@@ -1,19 +1,18 @@
-import React from 'react'
-import { ChatState } from '../context/ChatProvider';
-import { Box, Button, Stack, Text, useToast } from '@chakra-ui/react';
+import React from "react";
+import { ChatState } from "../context/ChatProvider";
+import { Box, Button, Stack, Text, useToast } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { AddIcon } from '@chakra-ui/icons';
-import ChatLoading from '../ChatLoading';
-import { getSender } from '../../config/ChatLogics';
-import GroupChatModel from './GroupChatModel';
-
+import { AddIcon } from "@chakra-ui/icons";
+import ChatLoading from "../ChatLoading";
+import { getSender } from "../../config/ChatLogics";
+import GroupChatModel from "./GroupChatModel";
 
 const MyChats = ({ fetchAgain }) => {
   const [loggedUser, setLoggedUser] = useState();
 
   const { selectedChat, setSelectedChat, user, chats, setChats } = ChatState();
-  const toast = useToast()
+  const toast = useToast();
 
   const fetchChats = async () => {
     // console.log(user._id);
@@ -27,8 +26,6 @@ const MyChats = ({ fetchAgain }) => {
       const { data } = await axios.get("/api/chat", config);
 
       setChats(data);
-
-
     } catch (error) {
       toast({
         title: "Error Occured!",
@@ -41,22 +38,11 @@ const MyChats = ({ fetchAgain }) => {
     }
   };
 
-
-
-
-
-
-
-
-
-
   useEffect(() => {
     setLoggedUser(JSON.parse(localStorage.getItem("userInfo")));
     fetchChats();
     // eslint-disable-next-line
- }, [fetchAgain]);
-
-
+  }, [fetchAgain]);
 
   return (
     <>
@@ -79,8 +65,6 @@ const MyChats = ({ fetchAgain }) => {
           w="100%"
           justifyContent="space-between"
           alignItems="center"
-
-
         >
           MY chats
           <GroupChatModel>
@@ -92,7 +76,6 @@ const MyChats = ({ fetchAgain }) => {
               New Group Chat
             </Button>
           </GroupChatModel>
-
         </Box>
 
         <Box
@@ -138,19 +121,9 @@ const MyChats = ({ fetchAgain }) => {
             <ChatLoading />
           )}
         </Box>
-
-
-
-
       </Box>
-
-
-
-
-
-
     </>
-  )
-}
+  );
+};
 
-export default MyChats
+export default MyChats;

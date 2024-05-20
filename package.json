@@ -14,6 +14,7 @@
     "axios": "^1.6.0",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
+    "caniuse-lite": "^1.0.30001620",
     "colors": "^1.4.0",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
@@ -23,5 +24,8 @@
     "nodemon": "^3.0.1",
     "npm-run-all": "^4.1.5",
     "socket.io": "^4.7.2"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }

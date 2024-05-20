@@ -1,22 +1,12 @@
 import React, { useState } from "react";
-import {
-  Button,
-  FormControl,
-  FormLabel,
-  Input,
-  InputGroup,
-  InputRightElement,
-  VStack,
-  useToast,
-} from "@chakra-ui/react";
+import {Button,FormControl,FormLabel,Input,InputGroup,InputRightElement,VStack,useToast,} from "@chakra-ui/react";
 import { useNavigate } from "react-router";
 import axios from "axios";
+
 const SignIn = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-
   const [Show, setShow] = useState(false);
-
   const handleCLick = () => setShow(!Show);
   const [loading, setLoading] = useState(false);
   const toast = useToast();
@@ -114,7 +104,7 @@ const SignIn = () => {
         width="100%"
         onClick={() => {
           setEmail("guest@indoreinstitute.com");
-          setPassword("12345678");
+          setPassword("guest@123");
         }}
       >
         Get Guest User Credentials

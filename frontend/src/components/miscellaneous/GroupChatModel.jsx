@@ -1,22 +1,34 @@
-import { Box, Button, FormControl, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure, useToast } from '@chakra-ui/react'
-import React, { useState } from 'react'
-import { ChatState } from '../context/ChatProvider';
-import axios from 'axios';
+import {
+  Box,
+  Button,
+  FormControl,
+  Input,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  useDisclosure,
+  useToast,
+} from "@chakra-ui/react";
+import React, { useState } from "react";
+import { ChatState } from "../context/ChatProvider";
+import axios from "axios";
 import UserListItem from "../userAvatar/UserListItem";
-import UserBadgeItem from '../userAvatar/UserBadgeItem';
-
+import UserBadgeItem from "../userAvatar/UserBadgeItem";
 
 const GroupChatModel = ({ children }) => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const [groupChatName, setGroupChatName] = useState();
   const [selectedUsers, setSelectedUsers] = useState([]);
   const [search, setSearch] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const toast = useToast()
+  const toast = useToast();
   const { user, chats, setChats } = ChatState();
-
 
   const handleSearch = async (query) => {
     setSearch(query);
@@ -111,11 +123,6 @@ const GroupChatModel = ({ children }) => {
     setSelectedUsers([...selectedUsers, userToAdd]);
   };
 
-
-
-
-
-
   return (
     <>
       <span onClick={onOpen}>{children}</span>
@@ -127,7 +134,9 @@ const GroupChatModel = ({ children }) => {
             fontFamily="Work sans"
             display="flex"
             justifyContent="center"
-          >Create Group Chat</ModalHeader>
+          >
+            Create Group Chat
+          </ModalHeader>
           <ModalCloseButton />
           <ModalBody display="flex" flexDir="column" alignItems="center">
             <FormControl>
@@ -169,20 +178,14 @@ const GroupChatModel = ({ children }) => {
             )}
           </ModalBody>
           <ModalFooter>
-            <Button colorScheme='blue' mr={3} onClick={handleSubmit}>
+            <Button colorScheme="blue" mr={3} onClick={handleSubmit}>
               Create Chat
             </Button>
-
           </ModalFooter>
         </ModalContent>
       </Modal>
     </>
-  )
-}
+  );
+};
 
-export default GroupChatModel
-
-
-
-
-
+export default GroupChatModel;

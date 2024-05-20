@@ -1,14 +1,5 @@
 import React, { useState } from "react";
-import {
-  Button,
-  FormControl,
-  FormLabel,
-  Input,
-  InputGroup,
-  InputRightElement,
-  VStack,
-  useToast,
-} from "@chakra-ui/react";
+import {Button,FormControl,FormLabel,Input,InputGroup,InputRightElement,VStack,useToast,} from "@chakra-ui/react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -19,56 +10,10 @@ const SignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState();
   const [pic, setPic] = useState();
   const [Show, setShow] = useState(false);
-
   const [loading, setLoading] = useState(false);
   const handleCLick = () => setShow(!Show);
   const toast = useToast();
   const navigate = useNavigate();
-
-  const postDetails = (pics) => {
-    setLoading(true);
-    if (pics === undefined) {
-      toast({
-        title: "Please Select an Image!",
-        status: "warning",
-        duration: 5000,
-        isClosable: true,
-        position: "bottom",
-      });
-      return;
-    }
-    //   console.log(pics);
-    if (pics.type === "image/jpeg" || pics.type === "image/png") {
-      const data = new FormData();
-      data.append("file", pics);
-      data.append("upload_preset", "CollegeBuddy");
-      data.append("cloud_name", "minor-CollegeBuddy");
-      fetch("https://api.cloudinary.com/v1_1/minor-CollegeBuddy/image/upload", {
-        method: "post",
-        body: data,
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          setPic(data.url.toString());
-          //console.log(data.url.toString());
-          setLoading(false);
-        })
-        .catch((err) => {
-          // console.log(err);
-          setLoading(false);
-        });
-    } else {
-      toast({
-        title: "Please Select an Image!",
-        status: "warning",
-        duration: 5000,
-        isClosable: true,
-        position: "bottom",
-      });
-      setLoading(false);
-      return;
-    }
-  };
   const submitHandler = async () => {
     setLoading(true);
     if (!name || !email || !password || !confirmPassword) {
@@ -92,7 +37,6 @@ const SignUp = () => {
       });
       return;
     }
-    //console.log(name, email, password, pic);
     try {
       const config = {
         headers: {
@@ -102,10 +46,7 @@ const SignUp = () => {
       const { data } = await axios.post(
         "/api/user",
         {
-          name,
-          email,
-          password,
-          pic,
+          name,email,password,pic,
         },
         config
       );
@@ -180,15 +121,7 @@ const SignUp = () => {
           </InputRightElement>
         </InputGroup>
       </FormControl>
-      {/* <FormControl id="pic">
-        <FormLabel> Upload Your picture </FormLabel>
-        <Input
-          type="file"
-          p={1.5}
-          accept="image/*"
-          onChange={(e) => postDetails(e.target.files[0])}
-        />
-      </FormControl> */}
+      {}
       <Button
         colorScheme="blue"
         width="100%"

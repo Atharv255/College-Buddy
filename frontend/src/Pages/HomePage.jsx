@@ -1,15 +1,5 @@
 import React, { useEffect } from "react";
-import {
-  Box,
-  Container,
-  Image,
-  Tab,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Tabs,
-  Text,
-} from "@chakra-ui/react";
+import {Box,Container,Tab,TabList,TabPanel,TabPanels,Tabs,Text,} from "@chakra-ui/react";
 import SignIn from "../components/authentication/SignIn";
 import SignUp from "../components/authentication/SignUp";
 import { useNavigate } from "react-router";
