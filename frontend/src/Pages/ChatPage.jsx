@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ChatState } from "../components/context/ChatProvider";
 import { Box } from "@chakra-ui/react";
 import LinkSlider from "./LinkSlider";
+import "../CSS/ChatPage.css";
 
 const Chatpage = () => {
   const [fetchAgain, setFetchAgain] = useState(false);
@@ -32,7 +33,7 @@ const Chatpage = () => {
     "https://www.indiabix.com/aptitude/questions-and-answers/",
   ];
   return (
-    <div style={{ width: "100%" }}>
+    <div className="ChatPage" style={{ width: "100%" }}>
       {user && <SideDrawer />}
       <Box
         display="flex"

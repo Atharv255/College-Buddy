@@ -4,7 +4,7 @@
 
 .link-slider a {
   display: block;
-  color: rgb(0, 0, 0);
+  color: #023047;
   text-decoration: none;
   margin-left: 30%;
   position: relative;
@@ -14,7 +14,7 @@
 }
 
 a:hover {
-  color: rgb(21, 0, 252);
+  color: #4a4e69;
 }
 
 @keyframes slide {
