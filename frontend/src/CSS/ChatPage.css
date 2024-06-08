@@ -1,5 +1,13 @@
 .ChatPage {
-  background-color: #fae1dd;
+  background-color: #f8f7ff;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* This makes the background fixed on larger screens */
+}
+
+@media (max-width: 768px) {
+  .ChatPage {
+    background-attachment: scroll; 
+  }
 }

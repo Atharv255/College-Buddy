@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 import axios from "axios";
 
 const SignIn = () => {
-  const [email, setEmail] = useState();
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState();
   const [Show, setShow] = useState(false);
   const handleCLick = () => setShow(!Show);
@@ -100,7 +100,7 @@ const SignIn = () => {
       </Button>
       <Button
         variant="solid"
-        colorScheme="red"
+        colorScheme="purple"
         width="100%"
         onClick={() => {
           setEmail("guest@indoreinstitute.com");

@@ -33,11 +33,11 @@ const HomePage = () => {
         w="100%"
         m="40px 0 15px 0 "
       >
-        <Text fontSize="5xl" fontFamily="Work sans" fontWeight="extrabold">
+        <Text fontSize="4xl" fontFamily="Work sans" fontWeight="extrabold">
           Campus Buddy
         </Text>
       </Box>
-      <Box w="100%" p={4} borderRadius="lg" color="blue" borderWidth="1px">
+      <Box w="100%" p={4} borderRadius="lg" color="black" borderWidth="3px" borderColor="black">
         <Tabs variant="soft-rounded">
           <TabList mb="1em">
             <Tab width="50%">SIGN IN</Tab>

@@ -12,6 +12,7 @@ const Chatpage = () => {
   const { user } = ChatState();
   const links = [
     "https://github.com/Atharv255/College-Buddy",
+    "https://www.rgpvnotes.in/btech/grading-system-old/notes/",
     "https://socket.io/docs/v4/",
     "https://chat.openai.com/",
     "https://www.mongodb.com/",
@@ -39,7 +40,7 @@ const Chatpage = () => {
         display="flex"
         justifyContent="space-between"
         w="100%"
-        h="91.5vh"
+        h="92vh"
         p="10px"
       >
         {user && <MyChats fetchAgain={fetchAgain} />}

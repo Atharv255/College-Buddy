@@ -1,5 +1,14 @@
 import React, { useState } from "react";
-import {Button,FormControl,FormLabel,Input,InputGroup,InputRightElement,VStack,useToast,} from "@chakra-ui/react";
+import {
+  Button,
+  FormControl,
+  FormLabel,
+  Input,
+  InputGroup,
+  InputRightElement,
+  VStack,
+  useToast,
+} from "@chakra-ui/react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -46,7 +55,10 @@ const SignUp = () => {
       const { data } = await axios.post(
         "/api/user",
         {
-          name,email,password,pic,
+          name,
+          email,
+          password,
+          pic,
         },
         config
       );

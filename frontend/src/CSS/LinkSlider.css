@@ -4,7 +4,7 @@
 
 .link-slider a {
   display: block;
-  color: #023047;
+  color: #305be8;
   text-decoration: none;
   margin-left: 30%;
   position: relative;
@@ -14,7 +14,7 @@
 }
 
 a:hover {
-  color: #4a4e69;
+  color: #8edff6;
 }
 
 @keyframes slide {
@@ -48,4 +48,11 @@ a:hover {
 
 .link-slider a:nth-child(4) {
   animation-delay: 0s; /* Start all links at the same time */
+}
+
+/* Hide links on smaller screens */
+@media (max-width: 768px) {
+  .link-slider a {
+    display: none;
+  }
 }
