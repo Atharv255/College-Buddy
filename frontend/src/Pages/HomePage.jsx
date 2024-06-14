@@ -12,6 +12,7 @@ import {
 import SignIn from "../components/authentication/SignIn";
 import SignUp from "../components/authentication/SignUp";
 import { useNavigate } from "react-router";
+import { motion } from "framer-motion";
 import "../CSS/HomePage.css";
 
 const HomePage = () => {
@@ -22,22 +23,46 @@ const HomePage = () => {
       navigate("/chat");
     }
   }, [navigate]);
+  const AnimatedBox = motion(Box);
+  const AnimatedText = motion(Text);
 
   return (
     <Container className="HomePage" maxW="xl" centerContent>
-      <Box
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        p={3}
-        w="100%"
-        m="40px 0 15px 0 "
-      >
-        <Text fontSize="4xl" fontFamily="Work sans" fontWeight="extrabold">
-          Campus Buddy
-        </Text>
+      <Box>
+        <AnimatedBox
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          p={3}
+          w="100%"
+          m="40px 0px 15px 0px"
+        >
+          <AnimatedText
+            fontSize="4xl"
+            fontFamily="Work sans"
+            fontWeight="semibold"
+            initial={{ width: "0%" }}
+            animate={{ width: "100%" }}
+            transition={{ duration: 2, ease: "easeInOut" }}
+            style={{
+              overflow: "hidden",
+              whiteSpace: "nowrap",
+              display: "inline-block",
+            }}
+          >
+            Campus Buddy
+          </AnimatedText>
+        </AnimatedBox>
       </Box>
-      <Box w="100%" p={4} borderRadius="lg" color="black" borderWidth="3px" borderColor="black">
+
+      <Box
+        w="100%"
+        p={4}
+        borderRadius="lg"
+        color="black"
+        borderWidth="3px"
+        borderColor="grey"
+      >
         <Tabs variant="soft-rounded">
           <TabList mb="1em">
             <Tab width="50%">SIGN IN</Tab>

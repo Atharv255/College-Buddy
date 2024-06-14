@@ -40,7 +40,7 @@ const Chatpage = () => {
         display="flex"
         justifyContent="space-between"
         w="100%"
-        h="92vh"
+        h="91.5vh"
         p="10px"
       >
         {user && <MyChats fetchAgain={fetchAgain} />}

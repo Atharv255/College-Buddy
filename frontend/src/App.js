@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <video autoPlay muted loop className="video-background">
         <source
-          src="https://videos.pexels.com/video-files/3129752/3129752-hd_1280_720_30fps.mp4"
+          src="https://videos.pexels.com/video-files/3532489/3532489-hd_1280_720_25fps.mp4"
           type="video/mp4"
         />
       </video>

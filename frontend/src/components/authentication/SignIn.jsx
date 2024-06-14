@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import {Button,FormControl,FormLabel,Input,InputGroup,InputRightElement,VStack,useToast,} from "@chakra-ui/react";
 import { useNavigate } from "react-router";
 import axios from "axios";
+import "../../CSS/SignIn.css";
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
@@ -69,7 +70,9 @@ const SignIn = () => {
         <FormLabel> Email </FormLabel>
         <Input
           value={email}
+          className="custom-placeholder"
           placeholder="Enter your Email"
+          textColor="black"
           onChange={(e) => setEmail(e.target.value)}
         />
       </FormControl>
@@ -100,11 +103,11 @@ const SignIn = () => {
       </Button>
       <Button
         variant="solid"
-        colorScheme="purple"
+        colorScheme="red"
         width="100%"
         onClick={() => {
-          setEmail("guest@indoreinstitute.com");
-          setPassword("guest@123");
+          setEmail("xyz@indoreinstitute.com");
+          setPassword("password@123");
         }}
       >
         Get Guest User Credentials
